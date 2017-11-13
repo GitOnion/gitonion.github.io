@@ -5,17 +5,17 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-minimal_mistakes_skin    : "default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
+minimal_mistakes_skin    : "default" # "dirt", "air", "contrast", "dark", "mint", "sunrise"
 
 # Site Settings
-locale                   : "en"
-title                    : "Site Title"
+locale                   : "en-US"
+title                    : "Hacking Human"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Jong-kai Yang"
+description              : "In the Midst of Plenty, they were slowly starving to death."
+url                      : "https://hackinghuman.info" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "gitonion/gitonion.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -52,6 +52,37 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
 
+# Collections
+collections:
+  notes:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+  # _notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      sidebar:
+        nav: "notes"
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -83,10 +114,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Jong-kai Yang"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "In the midst of plenty, they were slowly starving to death."
+  location         :
   email            :
   uri              :
   bitbucket        :
@@ -170,7 +201,6 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
@@ -190,6 +220,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-graphviz
   - jemoji
 
 # mimic GitHub Pages with --safe
@@ -199,6 +230,11 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+
+# Graphviz https://github.com/kui/jekyll-graphviz
+# graphviz:
+#   options: "-Tsvg" # 'dot' command option
+#   command: "dot"   # execute this string. specify full path to 'dot' if you need
 
 
 # Archives
@@ -236,18 +272,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
