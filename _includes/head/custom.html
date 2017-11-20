@@ -1,5 +1,7 @@
 <!-- start custom head snippets -->
-
+{% if page.graphviz %}
+    <script src="{{ '/assets/js/viz-lite.js' | absolute_url }}"></script>
+{% endif %}
 <!-- insert favicons. use http://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->

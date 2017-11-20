@@ -1,27 +1,22 @@
 ---
 title: Infrastructure Names
 tags: 去魅
+graphviz: true
 ---
 更了解公司的系統以後，又再度有種 "其實沒那麼難，就是這樣而已" 的感覺。
 Infrastructure 說到底就是一堆機器，為了在管理這些機器時能夠用統一的概念和詞彙溝通，而挪用了一些既有的名詞湊成專有的名詞組。
 
-
-{% graphviz %}
-digraph infra_names{
-    rankdir=LR;
-    RuntimeEnv -> Ecosystem;
-    Ecosystem -> Habitat;
-    Habitat -> Machine;
-    SuperRegion -> Region;
-    Region -> Habitat;
-}
-{% endgraphviz %}
+{% include graphviz.html
+   title="infrastructure_names"
+   type="digraph"
+   graph="rankdir=LR; RuntimeEnv -> Ecosystem; Ecosystem -> Habitat; Habitat -> Machine; SuperRegion -> Region; Region -> Habitat;"
+ %}
 
 當我們在使用這些名詞（指稱實際的 infrastructure）溝通時，通常有兩層概念需要區分：邏輯層，和地理層。
 邏輯層：這台機器的主要任務是什麼？
 地理層：這台機器在哪裡？
 
-#### 邏輯層：
+### 邏輯層：
 * Runtime Environment 有三個： Dev, Stage, 和 Prod。
     *  其實小型專案，例如寫個部落格，也是在一台筆電上做這些事情。你需要一個環境來開發和測試（dev），一個環境是拿開發的結果實際上線跑跑看（stage），最後都確認沒問題了就要真的上線讓人使用（prod）。
     * 這些環境都是以 Prod 為準，複製 Prod 的環境之後，工程師再依據自己的需求設定。
@@ -33,7 +28,7 @@ digraph infra_names{
     * Prod 比較特殊，就只有一個 Prod
     * 這些每一個就都是一個 Ecosystem
 
-#### 地理層：
+### 地理層：
 上面說的環境或生態系，其實都包含很多台機器，這些機器有時候會放在一起，因為放在一起有工程上的優勢：機器和機器之間溝通的速度比較快、一起管理比較省錢、備援方便，等等諸如此類的原因；有時候不會放在一起，因為放在離使用者（包含客戶和工程師）比較近的地方，機器提供服務的速度（主要取決於網路的速度和距離遠近）會比較快。
 
 * Habitat：

@@ -1,0 +1,6 @@
+<div id="{{ include.title }}"></div>
+<script>
+var str_concat =  "{{ include.type }}" + "{" + "{{ include.graph }}" + "}";
+document.getElementById("{{ include.title }}").innerHTML = Viz(str_concat);
+</script>
+
