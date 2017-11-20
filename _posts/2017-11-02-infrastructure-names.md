@@ -9,7 +9,12 @@ Infrastructure 說到底就是一堆機器，為了在管理這些機器時能�
 {% include graphviz.html
    title="infrastructure_names"
    type="digraph"
-   graph="rankdir=LR; RuntimeEnv -> Ecosystem; Ecosystem -> Habitat; Habitat -> Machine; SuperRegion -> Region; Region -> Habitat;"
+   graph="rankdir=LR;
+          RuntimeEnv -> Ecosystem;
+          Ecosystem -> Habitat;
+          Habitat -> Machine;
+          SuperRegion -> Region;
+          Region -> Habitat;"
  %}
 
 當我們在使用這些名詞（指稱實際的 infrastructure）溝通時，通常有兩層概念需要區分：邏輯層，和地理層。
