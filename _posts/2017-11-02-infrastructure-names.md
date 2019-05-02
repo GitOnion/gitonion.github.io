@@ -17,6 +17,10 @@ Infrastructure 說到底就是一堆機器，為了在管理這些機器時能�
           Region -> Habitat;"
  %}
 
+> Hello world!
+> [name=Jong-kai Yang]
+
+
 當我們在使用這些名詞（指稱實際的 infrastructure）溝通時，通常有兩層概念需要區分：邏輯層，和地理層。
 邏輯層：這台機器的主要任務是什麼？
 地理層：這台機器在哪裡？
